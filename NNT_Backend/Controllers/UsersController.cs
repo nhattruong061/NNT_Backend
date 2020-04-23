@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 using NNT_Backend.Services;
 using NNT_Backend.Entities;
 using NNT_Backend.Models.Users;
+using Microsoft.AspNetCore.Http;
 
 namespace NNT_Backend.Controllers
 {
@@ -68,6 +69,28 @@ namespace NNT_Backend.Controllers
             });
         }
 
+        /// <summary>
+        /// Creates a user.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /register
+        ///     {
+        ///        "username": "username",
+        ///        "password": "password",
+        ///        "firstname": "first name",
+        ///        "lastname": "last name",
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="RegisterModel">model</param>
+        /// <returns>A newly created User</returns>
+        /// <response code="200">Returns the newly created user</response>
+        /// <response code="400">If the user is null</response>            
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [AllowAnonymous]
         [HttpPost("register")]
         public IActionResult Register([FromBody]RegisterModel model)
