@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using AutoMapper;
-using System.IdentityModel.Tokens.Jwt;
-using NNT_Backend.Helpers;
-using Microsoft.Extensions.Options;
-using System.Text;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using NNT_Backend.Services;
-using NNT_Backend.Entities;
-using NNT_Backend.Models.Users;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using NNT_Backend.Entities;
+using NNT_Backend.Helpers;
+using NNT_Backend.Models.Users;
+using NNT_Backend.Services;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace NNT_Backend.Controllers
 {
@@ -35,7 +35,7 @@ namespace NNT_Backend.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
@@ -84,10 +84,10 @@ namespace NNT_Backend.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="RegisterModel">model</param>
+        /// <param name="model"></param>
         /// <returns>A newly created User</returns>
         /// <response code="200">Returns the newly created user</response>
-        /// <response code="400">If the user is null</response>            
+        /// <response code="400">If the user is null</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -136,7 +136,7 @@ namespace NNT_Backend.Controllers
 
             try
             {
-                // update user 
+                // update user
                 _userService.Update(user, model.Password);
                 return Ok();
             }

@@ -1,20 +1,19 @@
-using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using NNT_Backend.Helpers;
-using NNT_Backend.Services;
-using AutoMapper;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using NNT_Backend.Helpers;
 using NNT_Backend.Infrastructure;
+using NNT_Backend.Services;
+using System;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace NNT_Backend
 {
@@ -42,7 +41,6 @@ namespace NNT_Backend
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddSwaggerDocumentation();
 
             // configure strongly typed settings objects
             var appSettingsSection = _configuration.GetSection("AppSettings");
@@ -86,6 +84,8 @@ namespace NNT_Backend
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+
+            services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,15 +93,6 @@ namespace NNT_Backend
         {
             // migrate any database changes on startup (includes initial db creation)
             dataContext.Database.Migrate();
-
-            // Add logger
-            loggerFactory.AddLog4Net();  
-
-            if (env.IsDevelopment())
-            {
-                // App configuration
-                app.UseSwaggerDocumentation();
-            } 
 
             app.UseRouting();
 
@@ -115,6 +106,15 @@ namespace NNT_Backend
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            // Add logger
+            loggerFactory.AddLog4Net();
+
+            //if (env.IsDevelopment())
+            //{
+            // App configuration
+            app.UseSwaggerDocumentation();
+            //}
         }
     }
 }

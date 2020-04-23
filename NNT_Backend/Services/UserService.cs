@@ -1,8 +1,8 @@
+using NNT_Backend.Entities;
+using NNT_Backend.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NNT_Backend.Entities;
-using NNT_Backend.Helpers;
 
 namespace NNT_Backend.Services
 {
