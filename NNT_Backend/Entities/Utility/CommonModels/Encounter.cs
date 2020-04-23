@@ -1,4 +1,6 @@
-﻿namespace NNT_Backend.Entities.Utility.CommonModels
+﻿using NNT_Backend.Entities.Encounters;
+
+namespace NNT_Backend.Entities.Utility.CommonModels
 {
     public class Encounter
     {
