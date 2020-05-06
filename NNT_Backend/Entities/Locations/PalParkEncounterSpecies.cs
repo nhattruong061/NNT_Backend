@@ -1,4 +1,6 @@
-﻿namespace NNT_Backend.Entities.Locations
+﻿using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+
+namespace NNT_Backend.Entities.Locations
 {
     public class PalParkEncounterSpecies
     {

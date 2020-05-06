@@ -1,4 +1,5 @@
 ﻿using NNT_Backend.Entities.Locations;
+using NNT_Backend.Entities.Utility.CommonModels;
 
 namespace NNT_Backend.Entities.Pokemon.Pokemon
 {

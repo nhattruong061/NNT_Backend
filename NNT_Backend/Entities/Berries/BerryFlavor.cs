@@ -1,4 +1,5 @@
 ﻿using NNT_Backend.Entities.Contests;
+using NNT_Backend.Entities.Utility.CommonModels;
 using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Berries

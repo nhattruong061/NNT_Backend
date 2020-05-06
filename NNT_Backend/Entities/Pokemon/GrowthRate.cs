@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Utility.CommonModels;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Pokemon
 {
@@ -9,6 +10,6 @@ namespace NNT_Backend.Entities.Pokemon
         public string formula { get; set; }
         public IList<Description> descriptions { get; set; }
         public IList<GrowthRateExperienceLevel> levels { get; set; }
-        public IList<PokemonSpecies> pokemon_species { get; set; }
+        public IList<PokemonSpecies.PokemonSpecies> pokemon_species { get; set; }
     }
 }

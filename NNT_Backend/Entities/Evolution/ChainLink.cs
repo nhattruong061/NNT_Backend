@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Evolution
 {

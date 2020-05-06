@@ -1,4 +1,7 @@
-﻿namespace NNT_Backend.Entities.Pokemon.Pokemon
+﻿using NNT_Backend.Entities.Evolution;
+using NNT_Backend.Entities.Moves;
+
+namespace NNT_Backend.Entities.Pokemon.Pokemon
 {
     public class PokemonMoveVersion
     {

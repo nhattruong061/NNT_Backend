@@ -1,4 +1,10 @@
-﻿using System;
+﻿using NNT_Backend.Entities.Evolution;
+using NNT_Backend.Entities.Locations;
+using NNT_Backend.Entities.Moves;
+using NNT_Backend.Entities.Pokemon.Ability;
+using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+using NNT_Backend.Entities.Utility.CommonModels;
+using System;
 using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Games

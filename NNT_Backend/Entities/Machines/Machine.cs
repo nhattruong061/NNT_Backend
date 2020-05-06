@@ -1,5 +1,6 @@
 ﻿using NNT_Backend.Entities.Evolution;
 using NNT_Backend.Entities.Items;
+using NNT_Backend.Entities.Moves;
 
 namespace NNT_Backend.Entities.Machines
 {

@@ -1,4 +1,6 @@
-﻿namespace NNT_Backend.Entities.Evolution
+﻿using NNT_Backend.Entities.Items;
+
+namespace NNT_Backend.Entities.Evolution
 {
     public class EvolutionChain
     {

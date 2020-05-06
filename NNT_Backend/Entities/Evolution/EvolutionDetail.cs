@@ -1,4 +1,8 @@
-﻿using System;
+﻿using NNT_Backend.Entities.Items;
+using NNT_Backend.Entities.Locations;
+using NNT_Backend.Entities.Moves;
+using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+using System;
 
 namespace NNT_Backend.Entities.Evolution
 {

@@ -1,4 +1,6 @@
-﻿namespace NNT_Backend.Entities.Moves
+﻿using NNT_Backend.Entities.Pokemon;
+
+namespace NNT_Backend.Entities.Moves
 {
     public class MoveStatChange
     {

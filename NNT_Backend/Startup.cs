@@ -8,7 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using NNT_Backend.Extensions;
 using NNT_Backend.Helpers;
+using NNT_Backend.Helpers.Logger;
 using NNT_Backend.Infrastructure;
 using NNT_Backend.Services;
 using System;
@@ -32,15 +34,16 @@ namespace NNT_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             // use sql server db in production and sqlite db in development
-            if (_env.IsProduction())
+            //if (_env.IsProduction())
                 services.AddDbContext<DataContext>();
-            else
-                services.AddDbContext<DataContext, SqliteDataContext>();
+            //else
+            //    services.AddDbContext<DataContext, SqliteDataContext>();
 
             services.AddCors();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            services.AddSingleton<ILoggerManager, LoggerManager>();
 
             // configure strongly typed settings objects
             var appSettingsSection = _configuration.GetSection("AppSettings");
@@ -104,6 +107,8 @@ namespace NNT_Backend
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
 

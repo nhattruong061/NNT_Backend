@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Evolution;
+using NNT_Backend.Entities.Games;
+using NNT_Backend.Entities.Utility.CommonModels;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Locations
 {

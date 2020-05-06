@@ -3,6 +3,6 @@
     public class PokemonSpeciesGender
     {
         public int rate { get; set; }
-        public PokemonSpecies pokemon_species { get; set; }
+        public PokemonSpecies.PokemonSpecies pokemon_species { get; set; }
     }
 }

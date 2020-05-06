@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Utility.CommonModels;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Pokemon.Pokemon
 {
@@ -17,7 +18,7 @@ namespace NNT_Backend.Entities.Pokemon.Pokemon
         public IList<PokemonHeldItem> held_items { get; set; }
         public IList<LocationAreaEncounter> location_area_encounters { get; set; }
         public IList<PokemonMove> moves { get; set; }
-        public PokemonSpecies species { get; set; }
+        public PokemonSpecies.PokemonSpecies species { get; set; }
         public PokemonSprites sprites { get; set; }
         public IList<Stat> stats { get; set; }
         public IList<PokemonType> types { get; set; }

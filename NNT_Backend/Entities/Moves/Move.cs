@@ -1,4 +1,7 @@
 ﻿using NNT_Backend.Entities.Contests;
+using NNT_Backend.Entities.Games;
+using NNT_Backend.Entities.Pokemon.Ability;
+using NNT_Backend.Entities.Utility.CommonModels;
 using System;
 using System.Collections.Generic;
 

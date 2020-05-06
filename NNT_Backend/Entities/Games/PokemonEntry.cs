@@ -1,4 +1,6 @@
-﻿namespace NNT_Backend.Entities.Games
+﻿using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+
+namespace NNT_Backend.Entities.Games
 {
     public class PokemonEntry
     {

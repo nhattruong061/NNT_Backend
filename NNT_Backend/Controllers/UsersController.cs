@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using NNT_Backend.Entities;
 using NNT_Backend.Helpers;
+using NNT_Backend.Helpers.Logger;
 using NNT_Backend.Models.Users;
 using NNT_Backend.Services;
 using System;
@@ -19,23 +20,16 @@ namespace NNT_Backend.Controllers
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseController
     {
         private IUserService _userService;
-        private IMapper _mapper;
-        private readonly AppSettings _appSettings;
 
-        public UsersController(
-            IUserService userService,
-            IMapper mapper,
-            IOptions<AppSettings> appSettings)
+        public UsersController(IUserService userService, IMapper mapper, ILoggerManager logger, IOptions<AppSettings> appSettings) : base(mapper, logger, appSettings)
         {
             _userService = userService;
-            _mapper = mapper;
-            _appSettings = appSettings.Value;
         }
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Items;
+using NNT_Backend.Entities.Pokemon;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Berries
 {
@@ -15,6 +17,6 @@ namespace NNT_Backend.Entities.Berries
         public BerryFirmness firmness { get; set; }
         public IList<BerryFlavor> flavors { get; set; }
         public Item item { get; set; }
-        public NaturalGiftType natural_gift_type { get; set; }
+        public Type natural_gift_type { get; set; }
     }
 }

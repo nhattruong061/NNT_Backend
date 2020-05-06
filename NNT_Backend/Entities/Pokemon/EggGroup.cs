@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using NNT_Backend.Entities.Pokemon.PokemonSpecies;
+using NNT_Backend.Entities.Utility.CommonModels;
+using System.Collections.Generic;
 
 namespace NNT_Backend.Entities.Pokemon
 {
@@ -7,6 +9,6 @@ namespace NNT_Backend.Entities.Pokemon
         public int id { get; set; }
         public string name { get; set; }
         public IList<Name> names { get; set; }
-        public PokemonSpecies pokemon_species { get; set; }
+        public PokemonSpecies.PokemonSpecies pokemon_species { get; set; }
     }
 }
